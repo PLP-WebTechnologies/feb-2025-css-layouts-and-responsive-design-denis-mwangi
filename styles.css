@@ -1,0 +1,114 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Navigation Bar (Flexbox) */
+nav {
+    background-color: #333;
+    color: white;
+    padding: 1em 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 1em;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
+/* Main Content (Grid) */
+.container {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column by default for mobile */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.hero {
+    background-color: #e0f7fa;
+    padding: 2em;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.content-section {
+    background-color: white;
+    padding: 2em;
+    border-radius: 8px;
+}
+
+.sidebar {
+    background-color: #dcedc8;
+    padding: 1em;
+    border-radius: 8px;
+}
+
+.footer {
+    text-align: center;
+    padding: 1em 0;
+    background-color: #333;
+    color: white;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Tablet View */
+@media (min-width: 768px) {
+    .container {
+        grid-template-columns: 2fr 1fr; /* Two columns for tablet */
+    }
+}
+
+/* Desktop View */
+@media (min-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr 250px; /* Main content and fixed sidebar */
+        grid-template-areas:
+            "hero hero"
+            "content sidebar";
+    }
+
+    .hero {
+        grid-area: hero;
+    }
+
+    .content-section {
+        grid-area: content;
+    }
+
+    .sidebar {
+        grid-area: sidebar;
+    }
+}
